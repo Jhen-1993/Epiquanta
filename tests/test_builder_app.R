@@ -1,0 +1,18 @@
+Sys.setlocale('LC_CTYPE','English_United States.utf8');source('app.R',encoding='UTF-8');dir.create('test-output',showWarnings=FALSE)
+set.seed(822);n<-600;eta<-rnorm(n);z<-data.frame(q1=eta+rnorm(n,sd=.5),q2=eta+rnorm(n,sd=.6),q3=eta+rnorm(n,sd=.7),y=.5*eta+rnorm(n))
+shiny::testServer(server,{
+ ingest(z,'Synthetic SEM test');session$flushReact()
+ session$setInputs(design='cross',structure='independent',purpose='path',module='sem',sem_entry='builder',estimator='MLR',ordered=character(),B=20,bootstrap_ci=FALSE,seed=123,validation='same')
+ session$setInputs(sem_node_1_code='F1',sem_node_1_kind='latent',sem_node_1_label='題組',sem_node_1_items=c('q1','q2','q3'))
+ session$setInputs(sem_y_kind='observed',sem_y_variable='y',sem_y_type='auto',sem_y_label='結果',builder_action=list(action='add_edge',id=''))
+ session$setInputs(sem_edge_1_from='1',sem_edge_1_to='outcome',sem_edge_1_type='regression',run=1)
+ stopifnot(result()$title!='分析未完成','SEM_diagram'%in%names(result()$plots),grepl('y ~ F1',result()$settings$syntax,fixed=TRUE));cat('PASS: SEM guided UI runs and freezes generated syntax\n')
+ stopifnot(grepl('統計套件',as.character(output$results$html)),grepl('繪圖套件',as.character(output$results$html)));cat('PASS: result UI separates package lists\n')
+ session$setInputs(sem_entry='syntax',syntax='F1 =~ q1 + q2 + q3\ny ~ F1',run=2);stopifnot(result()$title!='分析未完成');cat('PASS: advanced SEM syntax remains available\n')
+ session$setInputs(purpose='measurement',module='efa',efa_entry='builder',efa_labels='',efa_seed=31,cor_method='pearson',permutations=20,nfactor=1,reverse=character(),efa_group_1_label='問卷構面',efa_group_1_items=c('q1','q2','q3'),run=3)
+ stopifnot(result()$title!='分析未完成',result()$tables$EFA_summary$Scale=='問卷構面',identical(result()$settings$items,c('q1','q2','q3')));cat('PASS: EFA cards run selected items and freeze group names\n')
+})
+# Both ordered WLSMV and pure CFA use the same diagram without fabricated p/CI.
+ord<-z;for(v in c('q1','q2','q3'))ord[[v]]<-ordered(cut(z[[v]],breaks=c(-Inf,-.8,0,.8,Inf),labels=FALSE))
+w<-sem_analysis(ord,'F1 =~ q1 + q2 + q3\ny ~ F1',ordered_vars=c('q1','q2','q3'),estimator='WLSMV');stopifnot('SEM_diagram'%in%names(w$plots));cat('PASS: WLSMV ordinal SEM figure\n')
+cfa<-cfa_analysis(z,'F1 =~ q1 + q2 + q3');stopifnot('SEM_diagram'%in%names(cfa$plots),all(is.na(cfa$tables$SEM_fit_summary$Value[cfa$tables$SEM_fit_summary$Index=='Chi_square_df'])));cat('PASS: just-identified CFA figure leaves chi-square/df undefined\n')

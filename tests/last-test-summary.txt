@@ -1,0 +1,72 @@
+PASS 31
+FAIL 0
+p values and rounding
+Table1 real counts
+Welch matches R
+Fisher comparison
+Spearman and Holm
+Linear HC3
+Logistic interaction and standardized risks
+RR HC0 and no LRT
+Case-control refuses RR
+Poisson and negative binomial
+Ordinal model
+Multinomial model
+2x2 known risk ratio and risk difference
+Zero cells preserve absence of log RR CI
+Cox KM PH and interaction
+AG and overlap validation
+2SLS recovers simulated effect
+ROC direction
+Alpha matches psych
+Reverse bounds required
+Two items no EFA
+Constant item rejected
+Non PD SMC rejects
+Parallel reproducibility and PAF
+Bootstrap 5000 alpha
+Bootstrap failures are reported
+Estimator RNG cannot duplicate resamples
+SEM MLR AVE HTMT
+SEM WLSMV
+SEM bootstrap refits
+Real Word and Excel exports
+R version 4.5.2 (2025-10-31 ucrt)
+Platform: x86_64-w64-mingw32/x64
+Running under: Windows 11 x64 (build 26200)
+
+Matrix products: default
+  LAPACK version 3.12.1
+
+locale:
+[1] LC_COLLATE=C                        LC_CTYPE=English_United States.utf8
+[3] LC_MONETARY=C                       LC_NUMERIC=C                       
+[5] LC_TIME=C                          
+
+time zone: Asia/Taipei
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+ [1] sandwich_3.1-3      generics_0.1.4      tidyr_1.3.2        
+ [4] xml2_1.6.0          lattice_0.22-7      magrittr_2.0.5     
+ [7] pROC_1.19.1         grid_4.5.2          RColorBrewer_1.1-3 
+[10] mvtnorm_1.4-2       Matrix_1.7-4        zip_3.0.2          
+[13] writexl_2.0.1       nnet_7.3-20         survival_3.8-3     
+[16] purrr_1.2.2         scales_1.4.0        pbivnorm_0.6.0     
+[19] numDeriv_2016.8-1.1 textshaping_1.0.5   mnormt_2.1.2       
+[22] cli_3.6.6           rlang_1.3.0         polycor_0.8-2      
+[25] splines_4.5.2       withr_3.0.3         tools_4.5.2        
+[28] officer_0.7.6       parallel_4.5.2      uuid_1.2-2         
+[31] dplyr_1.2.1         ggplot2_4.0.3       vctrs_0.7.3        
+[34] R6_2.6.1            stats4_4.5.2        zoo_1.9-0          
+[37] lifecycle_1.0.5     admisc_0.41         MASS_7.3-65        
+[40] psych_2.6.5         ragg_1.5.2          pkgconfig_2.0.3    
+[43] pillar_1.11.1       gtable_0.3.6        glue_1.8.1         
+[46] Rcpp_1.1.2          systemfonts_1.3.2   tibble_3.3.1       
+[49] tidyselect_1.2.1    farver_2.1.2        nlme_3.1-168       
+[52] lavaan_0.7-2        labeling_0.4.3      compiler_4.5.2     
+[55] S7_0.2.2            quadprog_1.5-8      askpass_1.2.1      
+[58] semTools_0.5-9      openssl_2.4.2      
