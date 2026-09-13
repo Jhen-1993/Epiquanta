@@ -1,0 +1,9 @@
+# User data and generated runtime files
+library/
+exports/
+logs/
+test-output/
+*.rds
+*.RData
+.Rhistory
+.Ruserdata
