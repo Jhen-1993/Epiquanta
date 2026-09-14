@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <title>Epiquanta</title>
-  <rect width="64" height="64" rx="17" fill="#14243e"/>
-  <circle cx="30" cy="30" r="19" fill="none" stroke="#a6baff" stroke-width="5"/>
-  <path d="m44 44 10 10" stroke="#64e4ce" stroke-width="6" stroke-linecap="round"/>
-  <path d="m18 35 8-10 9 7 8-12" fill="none" stroke="#64e4ce" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
