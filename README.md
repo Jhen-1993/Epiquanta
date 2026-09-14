@@ -1,13 +1,22 @@
 # Epiquanta
 
-Epiquanta 是在 Windows 本機執行的流行病學與生物統計 R／Shiny 工作室。
-請從 GitHub **Releases** 下載 `Epiquanta_Windows.zip`；一般使用者不需要把
-研究資料上傳到 GitHub。GitHub Pages 只提供入口說明，不能執行 R 後端。
+本 Repository 只放公開入口網站、下載導引與法律文件。
+統計分析不能在 GitHub Pages 執行；請到 Releases 下載完整 Windows 套件。
 
-## 啟動
+目前版本：v1.0.1
 
-1. 安裝 Windows x64 R 4.5.x。
-2. 解壓縮完整 Release 套件。
-3. 雙擊 `Start_Epiquanta.cmd`。
+## 使用方式
 
-原始碼、Pages 設定與上傳步驟見 `git/上傳指南.md`（交付資料夾外層）。
+1. 從 Releases 下載 `Epiquanta_Windows_v1.0.1.zip`。
+2. 完整解壓縮。
+3. 安裝 Windows x64 R 4.5.x。
+4. 雙擊 `Start_Epiquanta.cmd`。
+
+## 授權與責任
+
+- [Epiquanta 授權](LICENSE)
+- [第三方軟體聲明](THIRD_PARTY_NOTICES.md)
+- [第三方套件授權稽核表](THIRD_PARTY_LICENSE_AUDIT.csv)
+- [隱私說明](PRIVACY.md)
+- [使用條款](TERMS.md)
+- [免責與研究使用聲明](DISCLAIMER.md)
