@@ -12,7 +12,7 @@
   if (/^[a-zA-Z0-9_.-]+\/[a-zA-Z0-9_.-]+$/.test(repository)) {
     const base = 'https://github.com/' + repository;
     document.querySelectorAll('[data-download]').forEach(a => {
-      a.href = base + '/releases/latest/download/' + encodeURIComponent(cfg.asset || 'Epiquanta_Windows.zip');
+      a.href = base + '/releases/latest/download/' + encodeURIComponent(cfg.asset || 'Epiquanta_Windows_v1.0.3.zip');
       a.textContent = '下載 Windows 完整套件 ↓';
     });
     document.querySelectorAll('[data-releases]').forEach(a => { a.href = base + '/releases/latest'; });
